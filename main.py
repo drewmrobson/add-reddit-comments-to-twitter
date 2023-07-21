@@ -1,10 +1,9 @@
+import sys
 import praw
 import tweepy
-import sys
 
-print(sys.argv)
+# Configure praw
 
-# # Configure praw
 client_id = sys.argv[1]
 print(client_id)
 
