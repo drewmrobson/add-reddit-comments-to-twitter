@@ -55,9 +55,13 @@ saved_comments = reddit.user.me().saved(limit=None)
 # Send one saved comment as tweet then unsave it
 for saved in saved_comments:
     if type(saved) is praw.models.Comment:
-        response = client.create_tweet(
-            text=f'{saved.body} [Source](https://www.reddit.com/{saved.permalink})'
-        )
-        print(f"https://twitter.com/user/status/{response.data['id']}")
-        saved.unsave()
-        break
+        composed = f'{saved.body} [Source](https://www.reddit.com{saved.permalink})'
+        
+        if len(composed) < 280:
+            print(composed)
+            response = client.create_tweet(
+                text=composed
+            )
+            print(f"https://twitter.com/user/status/{response.data['id']}")
+            saved.unsave()
+            break
