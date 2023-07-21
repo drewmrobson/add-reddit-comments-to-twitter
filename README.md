@@ -11,17 +11,15 @@ This app will take one comment from your saved comments, post it as a tweet with
 # Running
 
 The Python file takes 9 parameters.
-
-Praw client ID
-Praw client secret
-Praw password
-Praw user agent
-Praw username
-
-Tweepy consumer key
-Tweepy consumer secret
-Tweepy access token
-Tweepy access token secret
+- Praw client ID
+- Praw client secret
+- Praw password
+- Praw user agent
+- Praw username
+- Tweepy consumer key
+- Tweepy consumer secret
+- Tweepy access token
+- Tweepy access token secret
 
 ```
 git clone https://github.com/drewmrobson/add-reddit-comments-to-twitter.git
