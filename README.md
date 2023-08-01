@@ -8,11 +8,11 @@ When reading Reddit, I often save comments that resonate with me. What else to d
 
 # Dependencies
 
-This app uses Praw to integrate with Reddit and Tweepy to integrate with Twitter.
+This app uses [Praw](https://praw.readthedocs.io/en/stable/) to integrate with Reddit and [Tweepy](https://www.tweepy.org/) to integrate with Twitter.
 
 # Running
 
-The Python file takes 9 parameters.
+The Python file takes 9 parameters in this order.
 - Praw client ID
 - Praw client secret
 - Praw password
