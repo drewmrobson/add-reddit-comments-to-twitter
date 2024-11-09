@@ -2,15 +2,21 @@
 
 Post comments you've saved in Reddit to Twitter as tweets.
 
-# Overview
+I built this dumb little app for myself and maybe you can find it useful too?
+
+- [Overview](#overview)
+- [Dependencies](#dependencies)
+- [Running](#running)
+
+## Overview
 
 When reading Reddit, I often save comments that resonate with me. What else to do with all these saved comments but share them with the world via Twitter? This app will take one comment from your saved comments, post it as a tweet with a link back to the comment, then remove it from your saved comments.
 
-# Dependencies
+## Dependencies
 
 This app uses [Praw](https://praw.readthedocs.io/en/stable/) to integrate with Reddit and [Tweepy](https://www.tweepy.org/) to integrate with Twitter.
 
-# Running
+## Running
 
 The Python file takes 9 parameters in this order.
 - Praw client ID
