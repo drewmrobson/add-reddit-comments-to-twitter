@@ -50,17 +50,24 @@ client = tweepy.Client(consumer_key=consumer_key,
 
 # Get Reddit comments
 saved_comments = reddit.user.me().saved(limit=None)
-
-# Send one saved comment as tweet then unsave it
-for saved in saved_comments:
-    if type(saved) is praw.models.Comment:
-        composed = f'{saved.body} [Source](https://www.reddit.com{saved.permalink})'
-        
+i = 1
+for saved_comment in saved_comments:
+    i = i + 1
+    if type(saved_comment) is praw.models.Comment:
+        composed = f'{saved_comment.body} [Source](https://www.reddit.com{saved_comment.permalink})'
         if len(composed) < 280:
             print(composed)
+
+            # Send one saved comment as tweet then unsave it
             response = client.create_tweet(
                 text=composed
             )
             print(f"https://twitter.com/user/status/{response.data['id']}")
-            saved.unsave()
+            saved_comment.unsave()
             break
+        else:
+            print("Saved comment is too long.")
+    else:
+        print("Not a saved comment.")
+
+print(i)
